@@ -6,7 +6,8 @@ const morgan = require('morgan')
 
 const bodyParser = require('body-parser')
 
-const Router = require('./controller/routes')
+const Router = require('./user/routes')
+const Admin = require('./admin/adminRoues')
 
 
 const app = express()
@@ -32,6 +33,7 @@ app.use((req,res,next)=>{
 })
 
 app.use(Router)
+app.use(Admin)
 
 
 module.exports = app
